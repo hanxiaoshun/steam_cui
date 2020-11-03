@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>成功注册页面</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <script type="text/javascript" src="/static/js/jquery/jquery-3.4.1.min.js"></script>
+    <script src='/static/js/whatsapp/main.js'></script>
+    <script src='/static/js/whatsapp/index.js'></script>
+</head>
+
+<body>
+
+<div class="index_login_out_p">
+    <a href="/">返回首页</a>
+    <form action="/login_out" method="post" target="_blank">
+        <button type="submit">退出</button>
+    </form>
+</div>
+
+<hr>
+<form action="/refresh_success" method="post" target="iframeName1">
+    <p style="text-align: center">
+        <button type="submit">刷新本次成功列表</button>
+    </p>
+</form>
+
+<hr>
+<!--{{info_len}}-->
+<!--{{register_success_list}}-->
+<table class="fl-table" border="1.5">
+    <!--               style="overflow-x: scroll; white-space: nowrap; text-align: center !important; color: #000000;">-->
+    <thead>
+    <tr class="table-head">
+        <th style="width: 5%">序号</th>
+        <th>批次开始时间</th>
+        <th>账号</th>
+        <th>私钥</th>
+        <th>公钥</th>
+        <th>昵称</th>
+        <th>注册时间</th>
+        <!--        <th>操作</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    {% for reg_item in register_success_list %}
+    {% if reg_item.reg_pri_key != ""%}
+        {% if reg_item.reg_pub_key != ""%}
+            <td>{{loop.index}}</td>
+            <td>{{ reg_item.start_time }}</td>
+            <td>{{ reg_item.reg_account }}</td>
+            <td>{{ reg_item.reg_pri_key }}</td>
+            <td>{{ reg_item.reg_pub_key}}</td>
+            <td>{{ reg_item.pushname}}</td>
+            <td>{{ reg_item.insert_time }}</td>
+        {% else %}
+        {% endif %}
+    {% else %}
+    {% endif %}
+    <tr class="table-tr">
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<table class="index_table">
+    <tr>
+        <td>
+            <form action="/refresh_success" method="post" target="_blank">
+                <button type="submit">生成本次成功注册列表</button>
+            </form>
+        </td>
+        <td>
+            <form action="/reg_history_page_view" method="post" target="_blank">
+                <button type="submit">页面展示本期成功账号</button>
+            </form>
+        </td>
+        <td>
+            <form action="/reg_download" method="post" target="_blank">
+                <button type="submit">下载本期成功注册账号</button>
+            </form>
+        </td>
+        <td>
+            <form action="/logger" method="post" target="_blank">
+                <button type="submit">查看WA返回日志</button>
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form action="/logger_sms_table" method="post" target="_blank">
+                <button type="submit">查看本次短信平台日志</button>
+            </form>
+        </td>
+        <td>
+            <form action="/logger_code_table" method="post" target="_blank">
+                <button type="submit">查看本次请求验证码日志</button>
+            </form>
+        </td>
+        <td>
+            <form action="/logger_register_table" method="post" target="_blank">
+                <button type="submit">查看本次全部注册账号</button>
+            </form>
+        </td>
+    </tr>
+</table>
+
+<iframe name="iframeName1" id="iframeID1" src="" width="0" height="0" frameborder="0">
+</iframe>
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登陆页面</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <script type="text/javascript" src="/static/js/jquery/jquery-3.4.1.min.js"></script>
+    <script src='/static/js/whatsapp/main.js'></script>
+    <script src='/static/js/whatsapp/index.js'></script>
+</head>
+
+<body>
+<p class="index_login_out_p">
+    <a href="/">返回首页</a>
+</p>
+<form action="/login" method="post" target="iframeName1">
+    <table border="0.5px" class="index_table">
+        <thead>
+        <tr>
+            <th style="width: 10%"></th>
+            <th style="width: 25%"></th>
+            <th style="width: 10%"></th>
+            <th style="width: 25%"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="data_head">账号：</td>
+            <td><input name="username" placeholder="" required="required"></td>
+            <td class="data_head">密码：</td>
+            <td><input name="password" placeholder="" required></td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <hr>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p class="index_p">
+        <button type="submit" class="login_button" id="start_task">登录</button>
+    </p>
+</form>
+
+<hr>
+
+
+<!--<table class="index_table">-->
+<!--    <tr>-->
+<!--        <td>-->
+<!--            <form action="/reg_download" method="post" target="_blank">-->
+<!--                <button type="submit">下载本期成功账号</button>-->
+<!--            </form>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <form action="/logger" method="post" target="_blank">-->
+<!--                <button type="submit">查看日志</button>-->
+<!--            </form>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <form action="/logger_sms_table_all" method="post" target="_blank">-->
+<!--                <button type="submit">查看所有短信平台日志</button>-->
+<!--            </form>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <form action="/logger_sms_table" method="post" target="_blank">-->
+<!--                <button type="submit">查看本次短信平台日志</button>-->
+<!--            </form>-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>-->
+<!--            <form action="/logger_code_table_all" method="post" target="_blank">-->
+<!--                <button type="submit">查看所有请求验证码日志</button>-->
+<!--            </form>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <form action="/logger_code_table" method="post" target="_blank">-->
+<!--                <button type="submit">查看本批次请求验证码日志</button>-->
+<!--            </form>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <form action="/logger_register_table_all" method="post" target="_blank">-->
+<!--                <button type="submit">查看所有注册账号日志</button>-->
+<!--            </form>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <form action="/logger_register_table" method="post" target="_blank">-->
+<!--                <button type="submit">查看本次注册全部账号</button>-->
+<!--            </form>-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>-->
+<!--            <form action="/refresh_success_all" method="post" target="_blank">-->
+<!--                <button type="submit">查看历史注册列表</button>-->
+<!--            </form>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <form action="/refresh_success" method="post" target="_blank">-->
+<!--                <button type="submit">查看成功注册列表</button>-->
+<!--            </form>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <form action="/reg_history_download" method="post" target="_blank">-->
+<!--                <button type="submit">下载所有历史成功注册列表</button>-->
+<!--            </form>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <form action="/reg_history_page_view" method="post" target="_blank">-->
+<!--                <button type="submit">页面展示本期成功账号</button>-->
+<!--            </form>-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--</table>-->
+
+
+<!--<iframe name="iframeName1" id="iframeID1" src="" width="0" height="0" frameborder="0">-->
+<!--</iframe>-->
+
+</body>
+
+</html>

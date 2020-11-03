@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>查看短信平台状态信息</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <script type="text/javascript" src="/static/js/jquery/jquery-3.4.1.min.js"></script>
+    <script src='/static/js/whatsapp/main.js'></script>
+    <script src='/static/js/whatsapp/index.js'></script>
+</head>
+
+<body>
+<div class="index_login_out_p">
+    <a href="/">返回首页</a>
+    <form action="/login_out" method="post" target="_blank">
+        <button type="submit">退出</button>
+    </form>
+</div>
+<form action="/refresh_success" method="post" target="iframeName1">
+    <p style="text-align: center">
+        <button type="submit">刷新本次成功列表</button>
+    </p>
+</form>
+
+<hr>
+<!--{{sms_registry_tracking}}-->
+<!--{{sms_code_tracking}}-->
+<!--{{sms_registry_tracking}}-->
+<table class="fl-table" border="1.5">
+    <!--               style="overflow-x: scroll; white-space: nowrap; text-align: center !important; color: #000000;">-->
+    <thead>
+    <tr class="table-head">
+        <th style="width: 5%">序号</th>
+        <th>短信平台</th>
+        <th>余额</th>
+        <th>开始时间</th>
+        <th>项目ID</th>
+        <th>CC_MCC_MNC</th>
+        <th>登录状态</th>
+        <th>获取号码</th>98
+        <th>获取号码状态</th>
+        <th>验证码</th>
+        <th>验证码获取状态</th>
+        <!--        <th>操作</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    {% for sms_item in sms_start_tracking %}
+    <tr class="table-tr">
+        <td>{{loop.index}}</td>
+        <td>{{ sms_item.sms_platform }}</td>
+        <td>{{ sms_item.login_money }}</td>
+        <td>{{ sms_item.start_time }}</td>
+        <td>{{ sms_item.pid}}</td>
+        <td>{{ sms_item.cc_mcc_mnc}}</td>
+        <td>{{ sms_item.login_status }}</td>
+        <td>{{ sms_item.number_str }}</td>
+        <td>{{ sms_item.number_status }}</td>
+        <td>{{ sms_item.verify_code }}</td>
+        <td>{{ sms_item.verify_status }}</td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<table class="index_table">
+    <tr>
+        <td>
+            <form action="/refresh_success" method="post" target="_blank">
+                <button type="submit">生成本次成功注册列表</button>
+            </form>
+        </td>
+        <td>
+            <form action="/reg_history_page_view" method="post" target="_blank">
+                <button type="submit">页面展示本期成功账号</button>
+            </form>
+        </td>
+        <td>
+            <form action="/reg_download" method="post" target="_blank">
+                <button type="submit">下载本期成功注册账号</button>
+            </form>
+        </td>
+        <td>
+            <form action="/logger" method="post" target="_blank">
+                <button type="submit">查看WA返回日志</button>
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form action="/logger_sms_table" method="post" target="_blank">
+                <button type="submit">查看本次短信平台日志</button>
+            </form>
+        </td>
+        <td>
+            <form action="/logger_code_table" method="post" target="_blank">
+                <button type="submit">查看本次请求验证码日志</button>
+            </form>
+        </td>
+        <td>
+            <form action="/logger_register_table" method="post" target="_blank">
+                <button type="submit">查看本次全部注册账号</button>
+            </form>
+        </td>
+    </tr>
+</table>
+
+<iframe name="iframeName1" id="iframeID1" src="" width="0" height="0" frameborder="0">
+</iframe>
+
+</body>
+
+</html>

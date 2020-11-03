@@ -1,0 +1,21 @@
+'headerRaw':'Received: from smtp-01-tuk1.steampowered.com (unknown [208.64.202.37])\r\n\tby mx10 (Coremail) with SMTP
+id KMmowAB3lz8j+N9dxKWlAg--.30382S3;\r\n\tFri, 29 Nov 2019 00:39:01 +0800 (CST)\r\nDKIM-Signature: v=1;
+a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;\r\n\td=steampowered.com; s=smtp;
+h=Date:Message-Id:Content-Type:Subject:\r\n\tMIME-Version:Reply-To:From:To:
+Sender:Cc:Content-Transfer-Encoding:Content-ID:\r\n\tContent-Description:Resent-Date:Resent-From:Resent-
+Sender:Resent-To:Resent-Cc\r\n\t:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:\r\n\tList-
+Subscribe:List-Post:List-Owner:List-Archive;\r\n\tbh=f/zzQ6d6E1LDEDGCctfaWNB9CA9Mx4R5uJ/fB00CLsE=;
+ b=KL8GgqChbYq3OSsS3k2+UEjPeZ\r\n\tNA1aUFE2ivbfcA+9Ok01W1LsXDnC25Zd5Cej9Qt3HBzWeQQ7BUTgRjUC/u3frAUiohK0O9bMQhKCX\r\n\teMzeg+j6UmYL6nSyJvNLGF6hh2dqf09fKgQwayQT/ed34j1YAgTszxfMF+HNNUUfS0Mc=;
+ \r\nReceived: from [208.64.200.161] (helo=valvesoftware.com)\r\n\tby smtp-01-tuk1.steampowered.com with smtp (Exim 4.90_1)\r\n\t(envelope-from <noreply@steampowered.com>)\r\n\tid 1iaMom-00025M-5e\r\n\tfor mdqnqi@126.com; Thu, 28 Nov 2019 08:39:00 -0800\r\nTo: mdqnqi@126.com\r\nFrom:
+  "Steam" <noreply@steampowered.com>\r\nReply-To: <noreply@steampowered.com>\r\nErrors-To: <noreply@steampowered.com>\r\nX-Steam-Message-Type:
+  CAccountCreationEmailVerification\r\nMIME-Version: 1.0\r\nSubject: =?UTF-8?B?5pawIFN0ZWFtIOW4kOaIt+eUteWtkOmCruS7tumqjOivgQ==?=\r\nContent-Type: multipart/alternative;\r\n boundary="np5ddff82422a00"\r\nMessage-Id:
+   <E1iaMom-00025M-5e@smtp-01-tuk1.steampowered.com>\r\nDate: Thu, 28 Nov 2019 08:39:00 -0800\r\nX-CM-TRANSID:KMmowAB3lz8j+N9dxKWlAg--.30382S3\r\nAuthentication-Results: mx10; spf=pass smtp.mail=noreply@steampowered.\r\n\tcom; dkim=pass header.i=@steampowered.com\r\nX-Coremail-Antispam: 1Uf129KBjDUn29KB7ZKAUJUUU88529EdanIXcx71UUUUU7v73\r\n\tVFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxU6znmUUUUU\r\n',
+
+
+<a href="https://store.steampowered.com/account/newaccountverification?stoken=385313a17af59bf057c9254f1d024ea2c87193ac543cb821540ed83539596a944d188e14361d8315e303d3833e78a6a7&amp;creationid=5304319067267826436" style="border-radius: 2px; padding: 1px; display: block; text-decoration: none; color: #D2E885; background: #799905; background: -webkit-linear-gradient( top, #799905 5%, #536904 95%);
+	background: linear-gradient( to bottom, #799905 5%, #536904 95%);
+text-shadow: -1px -1px 0px rgba( 0, 0, 0, 0.1 );">
+										<span style="border-radius: 2px; display: block; padding: 0; font-size: 20px; line-height: 32px; ">
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;创建我的帐户&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										</span>
+										</a>

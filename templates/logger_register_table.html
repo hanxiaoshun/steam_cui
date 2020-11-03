@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>本次所有注册状态信息</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <script type="text/javascript" src="/static/js/jquery/jquery-3.4.1.min.js"></script>
+    <script src='/static/js/whatsapp/main.js'></script>
+    <script src='/static/js/whatsapp/index.js'></script>
+</head>
+
+<body>
+
+<div class="index_login_out_p">
+    <a href="/">返回首页</a>
+    <form action="/login_out" method="post" target="_blank">
+        <button type="submit">退出</button>
+    </form>
+</div>
+
+<hr>
+向WA注册账号的记录
+
+<table class="fl-table" border="1.5">
+    <!--               style="overflow-x: scroll; white-space: nowrap; text-align: center !important; color: #000000;">-->
+    <thead>
+    <tr class="table-head">
+        <th style="width: 5%">序号</th>
+        <th>本轮批次启动时间</th>
+        <th>国家代码</th>
+        <th>电话号码</th>
+        <th>电话号码（带国家码）</th>
+        <th>注册状态</th>
+        <th>注册时间</th>
+        <!--        <th>操作</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    {% for reg_item in sms_registry_tracking %}
+    <tr class="table-tr">
+        <td>{{loop.index}}</td>
+        <td>{{ reg_item.start_time }}</td>
+        <td>{{ reg_item.cc }}</td>
+        <td>{{ reg_item.number_str }}</td>
+        <td>{{ reg_item.number_full}}</td>
+        <td>{{ reg_item.reg_status }}</td>
+        <td>{{ reg_item.insert_time }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+<table class="index_table">
+    <tr>
+        <td>
+            <form action="/refresh_success" method="post" target="_blank">
+                <button type="submit">生成本次成功注册列表</button>
+            </form>
+        </td>
+        <td>
+            <form action="/reg_history_page_view" method="post" target="_blank">
+                <button type="submit">页面展示本期成功账号</button>
+            </form>
+        </td>
+        <td>
+            <form action="/reg_download" method="post" target="_blank">
+                <button type="submit">下载本期成功注册账号</button>
+            </form>
+        </td>
+        <td>
+            <form action="/logger" method="post" target="_blank">
+                <button type="submit">查看WA返回日志</button>
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form action="/logger_sms_table" method="post" target="_blank">
+                <button type="submit">查看本次短信平台日志</button>
+            </form>
+        </td>
+        <td>
+            <form action="/logger_code_table" method="post" target="_blank">
+                <button type="submit">查看本次请求验证码日志</button>
+            </form>
+        </td>
+        <td>
+            <form action="/logger_register_table" method="post" target="_blank">
+                <button type="submit">查看本次全部注册账号</button>
+            </form>
+        </td>
+    </tr>
+</table>
+<iframe name="iframeName1" id="iframeID1" src="" width="0" height="0" frameborder="0">
+</iframe>
+
+</body>
+
+</html>

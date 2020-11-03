@@ -1,0 +1,31 @@
+.data_head {
+    float: right;
+}
+.data_head_country {
+    float: left;
+}
+
+
+.index_table {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.index_p {
+    width: 75%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.index_login_out_p {
+    width: 75%;
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.start_button {
+    text-align: center;
+}

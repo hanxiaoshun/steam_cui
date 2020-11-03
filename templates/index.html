@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <script type="text/javascript" src="/static/js/jquery/jquery-3.4.1.min.js"></script>
+    <script src='/static/js/whatsapp/index.js'></script>
+    <script src='/static/js/whatsapp/luminati_country.js'></script>
+    <script src='/static/js/whatsapp/rotator_country.js'></script>
+    <script src='/static/js/whatsapp/main.js'></script>
+</head>
+
+<body>
+<div class="index_login_out_p">
+    <table class="table_accout">
+        <tr>
+            <td>
+                <form action="/login" method="post" target="_self">
+                    <button type="submit">登录</button>
+                </form>
+            </td>
+            <td>
+                <form action="/login_out" method="post" target="_self">
+                    <button type="submit">退出</button>
+                </form>
+            </td>
+            <td>
+                <button type="button" onclick="clear_data()" id="clear_data">清空所有数据</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<table class="index_table">
+    <tr>
+        <td colspan="4">
+            <hr>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right">自定义前缀：</td>
+        <td>
+            <form action="#" method='POST' onsubmit="return false">
+                <input type="text" id="id_setting_prefix" name="setting_prefix">
+                <input type="submit" onclick="func_setting_prefix()" value="确定">
+                <input type="button" onclick="func_setting_prefix_check()" value="检测">
+            </form>
+        </td>
+        <td>
+            <span class="class_setting_prefix" id="id_setting_prefix_label"></span>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right">导入邮箱：</td>
+        <td>
+            <form action="/upload_email_list_file" enctype='multipart/form-data' method='POST' target="_blank">
+                <input type="file" name="email_list_file">
+                <input type="submit" value="上传邮箱列表">
+            </form>
+        </td>
+        <td>
+            <span class="">可用：</span><span id="email_can_use_126"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="">已用：</span><span id="email_not_can_use_126"></span>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right">导入IP代理：</td>
+        <td>
+            <form action="/upload_ip_list" enctype='multipart/form-data' method='POST' target="_blank">
+                <input type="file" name="file_ip_list">
+                <input type="submit" value="上传IP代理列表">
+            </form>
+        </td>
+        <td>
+            <span class="">可用：</span><span id="ip_can_use"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="">已用：</span><span id="ip_not_can_use"></span>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <hr>
+        </td>
+    </tr>
+</table>
+
+<form action="#" method="post" onsubmit="return false">
+    <p class="index_p">
+        <label><input type="radio" name="proxy_switch" value="yes" style="color: #3A7734" checked/>使用IP代理 </label>
+        <label><input type="radio" name="proxy_switch" value="no" style="color: #9C1A1C"/>不使用IP代理 </label>
+        <br>
+        <button type="button" class="start_button" id="start_task" onclick="start_task_obj()">开始</button>
+        <button type="button" class="start_button" id="stop_task" onclick="end_task_obj()">停止</button>
+        <!--        <button type="button" class="start_button" id="test_sms" onclick="test_sms_obj()">测试登录状态</button>-->
+    </p>
+</form>
+<hr>
+<table class="index_table">
+    <tr>
+        <!--        <td>-->
+        <!--            <form action="/refresh_success" method="post" target="_blank">-->
+        <!--                <input type="text" value="false" hidden="hidden">-->
+        <!--                <button type="submit">生成本次成功注册列表</button>-->
+        <!--            </form>-->
+        <!--        </td>-->
+        <td>
+            <form action="/reg_history_page_view" method="post" target="_blank">
+                <input type="text" value="false" hidden="hidden">
+                <button type="submit">展示本期成功账号</button>
+            </form>
+        </td>
+        <td>
+            <form action="/reg_download" method="post" target="_blank">
+                <input type="text" value="false" hidden="hidden">
+                <button type="submit">下载本期成功注册账号</button>
+            </form>
+        </td>
+        <td>
+            <form action="/logger_register_table" method="post" target="_blank">
+                <input type="text" value="false" hidden="hidden">
+                <button type="submit">查看本次全部注册账号</button>
+            </form>
+        </td>
+    </tr>
+    <!--    <tr>-->
+    <!--        <td>-->
+    <!--            <form action="/logger_sms_table" method="post" target="_blank">-->
+    <!--                <button type="submit">操作Steam|Api日志</button>-->
+    <!--            </form>-->
+    <!--        </td>-->
+    <!--        <td>-->
+    <!--            <form action="/logger_sms_table" method="post" target="_blank">-->
+    <!--                <button type="submit">查看打码平台日志</button>-->
+    <!--            </form>-->
+    <!--        </td>-->
+    <!--        <td>-->
+    <!--            <form action="/logger_code_table" method="post" target="_blank">-->
+    <!--                <button type="submit">查看邮箱验证日志</button>-->
+    <!--            </form>-->
+    <!--        </td>-->
+
+    <!--        <td>-->
+    <!--            <form action="/logger" method="post" target="_blank">-->
+    <!--                <button type="submit">查看Steam注册日志</button>-->
+    <!--            </form>-->
+    <!--        </td>-->
+    <!--    </tr>-->
+    <!--    <tr>-->
+    <!--        <td>-->
+    <!--            <form action="/refresh_success" method="post" target="_blank">-->
+    <!--                <input type="text" value="true" hidden="hidden">-->
+    <!--                <button type="submit">生成历史成功注册列表</button>-->
+    <!--            </form>-->
+    <!--        </td>-->
+    <!--        <td>-->
+    <!--            <form action="/reg_history_page_view" method="post" target="_blank">-->
+    <!--                <input type="text" value="true" hidden="hidden">-->
+    <!--                <button type="submit">页面展示历史成功账号</button>-->
+    <!--            </form>-->
+    <!--        </td>-->
+    <!--        <td>-->
+    <!--            <form action="/reg_download" method="post" target="_blank">-->
+    <!--                <input type="text" value="true" hidden="hidden">-->
+    <!--                <button type="submit">下载历史成功注册账号</button>-->
+    <!--            </form>-->
+    <!--        </td>-->
+    <!--        <td>-->
+    <!--            <form action="/logger_register_table" method="post" target="_blank">-->
+    <!--                <input type="text" value="true" hidden="hidden">-->
+    <!--                <button type="submit">查看历史全部注册账号</button>-->
+    <!--            </form>-->
+    <!--        </td>-->
+    <!--    </tr>-->
+</table>
+<div>
+    <p class="index_p">
+        <span class="start_button">当前批次：</span><span id="patch_time"></span>&nbsp;&nbsp;&nbsp;&nbsp;|
+        <span class="start_button">正在进行：</span><span id="processing_time"></span>&nbsp;&nbsp;&nbsp;&nbsp;|
+        <span class="start_button">已完成：</span><span id="complete_time"></span>&nbsp;&nbsp;&nbsp;&nbsp;|
+        <span class="start_button">完成率：</span><span id="success_rate"></span>%&nbsp;&nbsp;&nbsp;&nbsp;|
+        <!--        <span class="start_button">打码申请成功：</span><span id="code_apply_time"></span>%&nbsp;&nbsp;&nbsp;&nbsp;|-->
+        <!--        <span class="start_button">邮箱验证成功：</span><span id="email_apply_time"></span>%&nbsp;&nbsp;&nbsp;&nbsp;|-->
+        <!--        <span class="start_button">注册申请成功：</span><span id="registry_apply_time"></span>%-->
+    </p>
+</div>
+<div>
+    <p class="get_logger">
+        实时日志展示：<br>
+        <span class="start_button" id="span_get_logger"></span>
+    </p>
+</div>
+
+
+<iframe name="iframeName1" id="iframeID1" src="" width="0" height="0" frameborder="0">
+</iframe>
+
+</body>
+
+</html>
